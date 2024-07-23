@@ -111,7 +111,7 @@ const THEMES = [
   const nav = document.getElementById("nav");
   
   const updateNavTheme = () => {
-    if (getThemePreference() === "dark" || getThemePreference() === "system") {
+    if (getThemePreference() === "dark" || (getThemePreference() === "system" && matchMedia.matches)) {
       nav?.classList.add("dark-mode");
       nav?.classList.remove("light-mode");
       if(window.scrollY <= 0) {
