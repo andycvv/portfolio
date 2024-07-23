@@ -1,0 +1,138 @@
+---
+import MoonIcon from "./icons/MoonIcon.astro";
+import SunIcon from "./icons/SunIcon.astro";
+import SystemIcon from "./icons/SystemIcon.astro";
+import ThemeOption from "./ThemeOption.astro";
+
+const THEMES = [
+  {
+    label: "Light",
+    icon: SunIcon,
+  },
+  {
+    label: "Dark",
+    icon: MoonIcon,
+  },
+  {
+    label: "System",
+    icon: SystemIcon,
+  },
+];
+---
+
+<a class="relative">
+  <button id="theme-toggle" class="flex relative">
+    <SunIcon id="light" class="theme-toggle-icon size-5 transition-all hidden" />
+    <MoonIcon id="dark" class="theme-toggle-icon size-5 transition-all hidden" />
+    <SystemIcon id="system" class="theme-toggle-icon size-5 transition-all hidden" />
+  </button>
+  <ul
+    id="themes-menu"
+    class="hidden flex-col mt-3 bg-white rounded-lg absolute top-5 -left-full shadow-[0_3px_10px_rgb(0,0,0,0.2)] dark:bg-gray-800 dark:text-white"
+  >
+    {
+      THEMES.map((theme) => (
+        <ThemeOption class="themes-menu-option">
+          <theme.icon class="size-5" /> {theme.label}
+        </ThemeOption>
+      ))
+    }
+  </ul>
+</a>
+
+<style>
+  #themes-menu.open {
+    display: block;
+    animation: scale-up-center 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes scale-up-center {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  const themeToggle = document.getElementById("theme-toggle")
+  const themesMenu = document.getElementById("themes-menu")
+  const themesToggleIcons = document.querySelectorAll(".theme-toggle-icon")
+  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
+
+  themeToggle?.addEventListener("click", (e) => {
+    e.stopPropagation()
+    e.preventDefault()
+
+    themesMenu?.classList.toggle('open')
+  })
+
+  const getThemePreference = () => {
+    if(typeof window.localStorage !== 'undefined'){
+      return window.localStorage.getItem('theme') ?? 'system'
+    }
+
+    return matchMedia.matches
+      ? "dark"
+      : "light"
+  }
+
+  const updateIcon = (themePreference : string) => {
+    themesToggleIcons.forEach((element : any) => {
+      element.style.scale = element.id === themePreference ? "1" : "0"
+      element.style.display = element.id === themePreference ? "block" : "none"
+    })
+  }
+
+  const updateTheme = () => {
+    const themePreference = getThemePreference()
+    const isDark =
+      themePreference === "dark" ||
+      (themePreference === "system" && matchMedia.matches)
+
+    updateIcon(themePreference)
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+  }
+  
+  matchMedia.addEventListener("change", updateTheme)
+
+  document.querySelectorAll(".themes-menu-option").forEach((element) => {
+    element.addEventListener("click", (e : any) => {
+      themesMenu?.classList.toggle('open')
+      localStorage.setItem("theme", e.currentTarget.textContent.trim().toLowerCase())
+      updateTheme()
+      updateNavTheme()
+    })
+  })
+  
+  const nav = document.getElementById("nav");
+  
+  const updateNavTheme = () => {
+    if (getThemePreference() === "dark" || getThemePreference() === "system") {
+      nav?.classList.add("dark-mode");
+      nav?.classList.remove("light-mode");
+    } else {
+      nav?.classList.add("light-mode");
+      nav?.classList.remove("dark-mode");
+    }
+  };
+  
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      nav?.classList.add("nav-move");
+      updateNavTheme();
+    } else {
+      nav?.classList.remove("nav-move", "dark-mode", "light-mode");
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  updateTheme()
+
+</script>

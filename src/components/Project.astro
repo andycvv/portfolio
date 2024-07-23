@@ -1,0 +1,42 @@
+---
+import Badge from "./Badge.astro";
+import GithubIcon from "./icons/GithubIcon.astro";
+import PreviewIcon from "./icons/Preview.astro";
+import Link from "./Link.astro";
+
+const { name, description, tags, image, href, preview } = Astro.props;
+---
+
+<article class="flex gap-4 lg:max-h-[240px] flex-col md:flex-row">
+  <div class="min-w-[275px] lg:min-w-[368px] min-h-[240px] rounded-lg overflow-hidden">
+    <img
+      src={image}
+      class="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform"
+    />
+  </div>
+  <div class="flex flex-col justify-between gap-3">
+    <h3 class="text-2xl font-semibold text-black dark:text-white">{name}</h3>
+    <p class="text-[#4A4A4A] text-sm lg:text-base text-pretty dark:text-[#CDCDCD]">{description}</p>
+    <div class="flex gap-2 flex-wrap">
+      {
+        tags.map((tag: any) => (
+          <Badge class={tag.class}>
+            <tag.icon class="size-3" /> {tag.name}
+          </Badge>
+        ))
+      }
+    </div>
+    <div class="flex gap-3">
+      <Link href={href}>
+        <GithubIcon class="size-4" /> Code
+      </Link>
+      {
+        preview && (
+          <Link href={preview}>
+            <PreviewIcon class="size-4" /> Preview
+          </Link>
+        )
+      }
+    </div>
+  </div>
+</article>
