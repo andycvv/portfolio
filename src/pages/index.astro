@@ -6,18 +6,17 @@ import ArrowRight from "../components/icons/ArrowRight.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Project from "../components/Project.astro";
 import Tecnologia from "../components/Tecnologia.astro";
-import { REDES } from "../data/redes"
-import { PROJECTS } from "../data/projects"
-import { TAGS } from "../data/tags"
-
+import { REDES } from "../data/redes";
+import { PROJECTS } from "../data/projects";
+import { TAGS } from "../data/tags";
 ---
 
-<Layout title="Porfolio de Andy Vargas - Desarrollador y Programador Web">
+<Layout
+  title="Portfolio de Andy Vargas - Desarrollador y Programador Web"
+  description="Soy Andy Vargas, estudiante de Computación e Informática, con habilidades en el desarrollo web. Me motiva seguir aprendiendo y perfeccionándome en mi carrera, y en mi tiempo libre disfruto explorando nuevas tecnologías y creando proyectos personales que desafíen mis habilidades."
+>
   <main class="mt-[120px]">
-    <SectionContainer
-      id="sobre-mi"
-      class="md:flex-row gap-5 md:gap-7"
-    >
+    <SectionContainer id="sobre-mi" class="md:flex-row gap-5 md:gap-7">
       <img
         src="https://media.licdn.com/dms/image/D4E03AQEr4LCuKse46A/profile-displayphoto-shrink_800_800/0/1718298278226?e=1727308800&v=beta&t=9MnkW4HaTGg3d_9GeZfIMXgK495sqiVwKYw93LTNYTk"
         class="w-[246px] h-[246px] rounded-full mx-auto"
@@ -58,33 +57,31 @@ import { TAGS } from "../data/tags"
       </article>
     </SectionContainer>
 
-    <SectionContainer
-      id="proyectos"
-    >
+    <SectionContainer id="proyectos">
       <h2 class="flex text-[#4A4A4A] mb-5 dark:text-[#CDCDCD]">
         <ArrowRight />
         Últimos proyectos
       </h2>
       <div class="flex flex-col gap-14">
-        {
-          PROJECTS.map(project => (
-            <Project {...project} />
-          ))
-        }
+        {PROJECTS.map((project) => <Project {...project} />)}
       </div>
     </SectionContainer>
 
-    <SectionContainer
-      id="tecnologias"
-    >
+    <SectionContainer id="tecnologias">
       <h2 class="flex text-[#4A4A4A] mb-5 mt-5 dark:text-[#CDCDCD]">
         <ArrowRight />
         Tecnologías
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-gray-200 dark:bg-[#393939] p-6 rounded-lg grid grid-cols-4 gap-7">
-          <h3 class="col-span-4 text-center text-2xl font-semibold text-[#4A4A4A] dark:text-white">Frontend</h3>
+        <div
+          class="bg-gray-200 dark:bg-[#393939] p-6 rounded-lg grid grid-cols-4 gap-7"
+        >
+          <h3
+            class="col-span-4 text-center text-2xl font-semibold text-[#4A4A4A] dark:text-white"
+          >
+            Frontend
+          </h3>
           <Tecnologia>
             <TAGS.HTML.icon class="size-10" />
             {TAGS.HTML.name}
@@ -114,8 +111,14 @@ import { TAGS } from "../data/tags"
             {TAGS.TAILWIND.name}
           </Tecnologia>
         </div>
-        <div class="bg-gray-200 dark:bg-[#393939] p-6 rounded-lg grid grid-cols-4 gap-7">
-          <h3 class="col-span-4 text-center text-2xl font-semibold text-[#4A4A4A] dark:text-white">Backend</h3>
+        <div
+          class="bg-gray-200 dark:bg-[#393939] p-6 rounded-lg grid grid-cols-4 gap-7"
+        >
+          <h3
+            class="col-span-4 text-center text-2xl font-semibold text-[#4A4A4A] dark:text-white"
+          >
+            Backend
+          </h3>
           <Tecnologia>
             <TAGS.JAVA.icon class="size-10" />
             {TAGS.JAVA.name}
@@ -141,8 +144,14 @@ import { TAGS } from "../data/tags"
             {TAGS.SPRINGBOOT.name}
           </Tecnologia>
         </div>
-        <div class="bg-gray-200 dark:bg-[#393939] p-6 rounded-lg md:col-span-2 grid grid-rows-2">
-          <h3 class="text-center text-2xl font-semibold text-[#4A4A4A] dark:text-white">Tools</h3>
+        <div
+          class="bg-gray-200 dark:bg-[#393939] p-6 rounded-lg md:col-span-2 grid grid-rows-2"
+        >
+          <h3
+            class="text-center text-2xl font-semibold text-[#4A4A4A] dark:text-white"
+          >
+            Tools
+          </h3>
           <div class="flex justify-center gap-7">
             <Tecnologia>
               <TAGS.ECLIPSE.icon class="size-10" />

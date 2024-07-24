@@ -14,7 +14,7 @@ export const REDES = [
     label: "GitHub",
   },
   {
-    link: "www.linkedin.com/in/andy-camilo-vargas-vargas-9b8421274",
+    link: "https://drive.google.com/file/d/1_Mr4CcBO3Lc0VvhXnFU8Nr9kr5ahQzsm/view?usp=sharing",
     icon: CVIcon,
     label: "CV",
   },
