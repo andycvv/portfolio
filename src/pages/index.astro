@@ -1,14 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import WorldIcon from "../components/icons/WorldIcon.astro";
-import SocialPill from "../components/SocialPill.astro";
 import ArrowRight from "../components/icons/ArrowRight.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Project from "../components/Project.astro";
-import Tecnologia from "../components/Tecnologia.astro";
-import { REDES } from "../data/redes";
 import { PROJECTS } from "../data/projects";
-import { TAGS } from "../data/tags";
+import SkillsElement from "../components/SkillsElement.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <Layout
@@ -16,46 +13,7 @@ import { TAGS } from "../data/tags";
   description="Soy Andy Vargas, estudiante de Computación e Informática, con habilidades en el desarrollo web. Me motiva seguir aprendiendo y perfeccionándome en mi carrera, y en mi tiempo libre disfruto explorando nuevas tecnologías y creando proyectos personales que desafíen mis habilidades."
 >
   <main class="mt-[120px]">
-    <SectionContainer id="sobre-mi" class="md:flex-row gap-5 md:gap-7">
-      <img
-        src="https://media.licdn.com/dms/image/D4E03AQEr4LCuKse46A/profile-displayphoto-shrink_800_800/0/1718298278226?e=1727308800&v=beta&t=9MnkW4HaTGg3d_9GeZfIMXgK495sqiVwKYw93LTNYTk"
-        class="w-[246px] h-[246px] rounded-full mx-auto"
-      />
-      <article class="flex flex-col gap-5 md:gap-3 justify-between">
-        <h1
-          class="text-2xl font-extrabold text-center md:text-start dark:text-white"
-        >
-          ¡Hola! Soy Andy Vargas
-        </h1>
-        <p
-          class="text-[#4A4A4A] text-pretty text-sm lg:text-base md:text-start text-center dark:text-[#CDCDCD]"
-        >
-          Estudiante de <span class="font-semibold"
-            >Computación e Informática</span
-          >, con habilidades en el
-          <span class="font-semibold">desarrollo web</span>. Me motiva seguir
-          aprendiendo y perfeccionándome en mi carrera, y en mi tiempo libre
-          disfruto explorando <span class="font-semibold"
-            >nuevas tecnologías</span
-          > y creando proyectos personales que desafíen mis habilidades.
-        </p>
-        <span
-          class="flex gap-1 items-center text-sm md:mx-0 mx-auto dark:text-[#CDCDCD]"
-        >
-          <WorldIcon class="size-4" />Lima, Perú, UTC
-        </span>
-        <nav id="redes" class="flex gap-4 md:justify-start justify-center">
-          {
-            REDES.map((red) => (
-              <SocialPill href={red.link}>
-                <red.icon class="size-5 text-[#4A4A4A] dark:text-[#FFFFFF]" />
-                {red.label}
-              </SocialPill>
-            ))
-          }
-        </nav>
-      </article>
-    </SectionContainer>
+    <Hero />
 
     <SectionContainer id="proyectos">
       <h2 class="flex text-[#4A4A4A] mb-5 dark:text-[#CDCDCD]">
@@ -74,99 +32,9 @@ import { TAGS } from "../data/tags";
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div
-          class="bg-gray-200 dark:bg-[#393939] p-6 rounded-lg grid grid-cols-4 gap-7"
-        >
-          <h3
-            class="col-span-4 text-center text-2xl font-semibold text-[#4A4A4A] dark:text-white"
-          >
-            Frontend
-          </h3>
-          <Tecnologia>
-            <TAGS.HTML.icon class="size-10" />
-            {TAGS.HTML.name}
-          </Tecnologia>
-          <Tecnologia>
-            <TAGS.CSS.icon class="size-10" />
-            {TAGS.CSS.name}
-          </Tecnologia>
-          <Tecnologia>
-            <TAGS.JAVASCRIPT.icon class="size-10" />
-            {TAGS.JAVASCRIPT.name}
-          </Tecnologia>
-          <Tecnologia>
-            <TAGS.REACT.icon class="size-10" />
-            {TAGS.REACT.name}
-          </Tecnologia>
-          <Tecnologia>
-            <TAGS.VITEJS.icon class="size-10" />
-            {TAGS.VITEJS.name}
-          </Tecnologia>
-          <Tecnologia>
-            <TAGS.ASTRO.icon class="size-10" />
-            {TAGS.ASTRO.name}
-          </Tecnologia>
-          <Tecnologia>
-            <TAGS.TAILWIND.icon class="size-10" />
-            {TAGS.TAILWIND.name}
-          </Tecnologia>
-        </div>
-        <div
-          class="bg-gray-200 dark:bg-[#393939] p-6 rounded-lg grid grid-cols-4 gap-7"
-        >
-          <h3
-            class="col-span-4 text-center text-2xl font-semibold text-[#4A4A4A] dark:text-white"
-          >
-            Backend
-          </h3>
-          <Tecnologia>
-            <TAGS.JAVA.icon class="size-10" />
-            {TAGS.JAVA.name}
-          </Tecnologia>
-          <Tecnologia>
-            <TAGS.JAVASCRIPT.icon class="size-10" />
-            {TAGS.JAVASCRIPT.name}
-          </Tecnologia>
-          <Tecnologia>
-            <TAGS.NODEJS.icon class="size-10" />
-            {TAGS.NODEJS.name}
-          </Tecnologia>
-          <Tecnologia>
-            <TAGS.MYSQL.icon class="size-10" />
-            {TAGS.MYSQL.name}
-          </Tecnologia>
-          <Tecnologia>
-            <TAGS.SQLSERVER.icon class="size-10" />
-            {TAGS.SQLSERVER.name}
-          </Tecnologia>
-          <Tecnologia>
-            <TAGS.SPRINGBOOT.icon class="size-10" />
-            {TAGS.SPRINGBOOT.name}
-          </Tecnologia>
-        </div>
-        <div
-          class="bg-gray-200 dark:bg-[#393939] p-6 rounded-lg md:col-span-2 grid grid-rows-2"
-        >
-          <h3
-            class="text-center text-2xl font-semibold text-[#4A4A4A] dark:text-white"
-          >
-            Tools
-          </h3>
-          <div class="flex justify-center gap-7">
-            <Tecnologia>
-              <TAGS.ECLIPSE.icon class="size-10" />
-              {TAGS.ECLIPSE.name}
-            </Tecnologia>
-            <Tecnologia>
-              <TAGS.VS.icon class="size-10" />
-              {TAGS.VS.name}
-            </Tecnologia>
-            <Tecnologia>
-              <TAGS.INTELLIJ.icon class="size-10" />
-              {TAGS.INTELLIJ.name}
-            </Tecnologia>
-          </div>
-        </div>
+        <SkillsElement class="grid-cols-4 gap-7" category="FRONTEND" />
+        <SkillsElement class="grid-cols-4 gap-7" category="BACKEND" />
+        <SkillsElement class="md:col-span-2 grid-rows-2" category="TOOLS" />
       </div>
     </SectionContainer>
   </main>

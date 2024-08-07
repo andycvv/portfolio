@@ -1,0 +1,11 @@
+export const TECS = {
+  FRONTEND: [
+    'HTML', 'CSS', 'JAVASCRIPT', 'REACT', 'VITEJS', 'ASTRO', 'TAILWIND', 'TYPESCRIPT'
+  ],
+  BACKEND: [
+    'JAVA', 'JAVASCRIPT', 'NODEJS', 'MYSQL', 'SQLSERVER', 'SPRINGBOOT'
+  ],
+  TOOLS: [
+    'ECLIPSE', 'VS', 'INTELLIJ', 'GIT'
+  ]
+}

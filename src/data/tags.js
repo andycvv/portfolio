@@ -13,81 +13,99 @@ import SpringBootIcon from "../components/icons/SpringBootIcon.astro";
 import EclipseIcon from "../components/icons/EclipseIcon.astro";
 import VSIcon from "../components/icons/VSIcon.astro";
 import IntelliJIcon from "../components/icons/IntelliJIcon.astro";
+import GitIcon from "../components/icons/GitIcon.astro";
+import TypeScriptIcon from "../components/icons/TypeScriptIcon.astro";
+import OpenAIIcon from "../components/icons/OpenAIIcon.astro";
 
 export const TAGS = {
-	JAVA: {
-		name : 'Java',
-		class: 'bg-red-900 text-white',
-		icon: JavaIcon
-	},
+  JAVA: {
+    name: 'Java',
+    class: 'bg-red-900 text-white',
+    icon: JavaIcon
+  },
   JAVASCRIPT: {
-    name : 'JS',
+    name: 'JS',
     class: 'bg-yellow-400 text-black',
     icon: JavaScriptIcon
   },
   HTML: {
-    name : 'HTML',
+    name: 'HTML',
     class: 'bg-red-500 text-white',
     icon: HTMLIcon
   },
   CSS: {
-    name : 'CSS',
+    name: 'CSS',
     class: 'bg-blue-500 text-white',
     icon: CSSIcon
   },
   MYSQL: {
-    name : 'MySQL',
+    name: 'MySQL',
     class: 'bg-blue-500 text-white',
     icon: MySQLIcon
   },
   REACT: {
-    name : 'React',
+    name: 'React',
     class: 'bg-blue-500 text-white',
     icon: ReactIcon
   },
   VITEJS: {
-    name : 'ViteJS',
+    name: 'ViteJS',
     class: 'bg-blue-500 text-white',
     icon: ViteIcon
   },
   ASTRO: {
-    name : 'Astro',
+    name: 'Astro',
     class: 'bg-blue-500 text-white',
     icon: AstroIcon
   },
   TAILWIND: {
-    name : 'Tailwind',
+    name: 'Tailwind',
     class: 'bg-blue-500 text-white',
     icon: TailwindIcon
   },
   NODEJS: {
-    name : 'NodeJS',
+    name: 'NodeJS',
     class: 'bg-blue-500 text-white',
     icon: NodeJSIcon
   },
   SQLSERVER: {
-    name : 'SQL Server',
+    name: 'SQL Server',
     class: 'bg-blue-500 text-white',
     icon: SQLServerIcon
   },
   SPRINGBOOT: {
-    name : 'Spring Boot',
+    name: 'Spring Boot',
     class: 'bg-blue-500 text-white',
     icon: SpringBootIcon
   },
   ECLIPSE: {
-    name : 'Eclipse',
+    name: 'Eclipse',
     class: 'bg-blue-500 text-white',
     icon: EclipseIcon
   },
   VS: {
-    name : 'Visual Studio',
+    name: 'Visual Studio',
     class: 'bg-blue-500 text-white',
     icon: VSIcon
   },
   INTELLIJ: {
-    name : 'IntelliJ',
+    name: 'IntelliJ',
     class: 'bg-blue-500 text-white',
     icon: IntelliJIcon
   },
+  GIT: {
+    name: 'Git',
+    class: 'bg-orange-500 text-white',
+    icon: GitIcon
+  },
+  TYPESCRIPT: {
+    name: 'Typescript',
+    class: 'bg-blue-800 text-white',
+    icon: TypeScriptIcon
+  },
+  OPENAI: {
+    name: 'OpenAI',
+    class: 'bg-blue-800 text-white',
+    icon: OpenAIIcon
+  }
 }

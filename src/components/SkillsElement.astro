@@ -1,0 +1,29 @@
+---
+import { TAGS } from "../data/tags"
+import { TECS } from "../data/tecs"
+
+import Tecnologia from "../components/Tecnologia.astro";
+const category = Astro.props.category as keyof typeof TECS
+---
+
+<div
+  class=`bg-gray-200 dark:bg-[#393939] p-6 rounded-lg grid ${Astro.props.class}`
+>
+  <h3
+  class="col-span-4 text-center text-2xl font-semibold text-[#4A4A4A] dark:text-white"
+  >
+    {Astro.props.category}
+  </h3>
+  {
+    Object.entries(TAGS).map(([key, value]) => {
+      if(TECS[category].includes(key)) {
+        return (
+          <Tecnologia>
+            <value.icon class="size-10" />
+            {value.name}
+          </Tecnologia>
+        )
+      }
+    })
+  }
+</div>
