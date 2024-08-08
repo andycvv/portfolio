@@ -105,7 +105,7 @@ export const TAGS = {
   },
   OPENAI: {
     name: 'OpenAI',
-    class: 'bg-blue-800 text-white',
+    class: 'bg-blue-950 text-white',
     icon: OpenAIIcon
   }
 }

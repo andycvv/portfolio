@@ -10,16 +10,16 @@ const category = Astro.props.category as keyof typeof TECS
   class=`bg-gray-200 dark:bg-[#393939] p-6 rounded-lg grid ${Astro.props.class}`
 >
   <h3
-  class="col-span-4 text-center text-2xl font-semibold text-[#4A4A4A] dark:text-white"
+  class="col-span-4 text-center text-md sm:text-2xl font-semibold text-[#4A4A4A] dark:text-white"
   >
-    {Astro.props.category}
+    {category}
   </h3>
   {
     Object.entries(TAGS).map(([key, value]) => {
       if(TECS[category].includes(key)) {
         return (
           <Tecnologia>
-            <value.icon class="size-10" />
+            <value.icon class="size-7 sm:size-10" />
             {value.name}
           </Tecnologia>
         )

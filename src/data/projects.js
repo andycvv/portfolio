@@ -11,8 +11,8 @@ export const PROJECTS = [
   },
   { 
     name: 'Sistema de Matrículas Escolares',
-    description: 'Sistema de Matrículas que permite a los administradores registrar, editar y buscar usuarios, cursos y categorías, además de gestionar matrículas y generar reportes. Los usuarios pueden crear cuentas y acceder con su DNI.',
-    tags: [TAGS.JAVA, TAGS.MYSQL, TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+    description: 'Permite registrar, editar y buscar usuarios, cursos y categorías, además de gestionar matrículas y generar reportes. Los usuarios pueden crear cuentas y acceder con su DNI.',
+    tags: [TAGS.JAVA, TAGS.MYSQL, TAGS.JAVASCRIPT],
     image: '/projects/matriculas.jpg',
     href: 'https://github.com/andycvv/sistema-gestion-colegio'
   },
@@ -26,7 +26,7 @@ export const PROJECTS = [
   },
   {
     name: 'La Lucha Sanguchería Criolla',
-    description: 'Página web para una empresa de sándwiches, con secciones de Inicio, Tienda y Nosotros. Permite explorar la historia de la empresa, navegar por el menú, agregar productos al carrito de compras y conocer al equipo.',
+    description: 'Página web para una empresa de sándwiches, con secciones de Inicio, Tienda y Nosotros. Permite explorar la historia de la empresa, navegar por el menú y agregar productos al carrito de compras.',
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
     image: '/projects/lalucha.jpg',
     href: 'https://github.com/andycvv/ProyectoLaLucha',
