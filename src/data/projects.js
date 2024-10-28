@@ -2,19 +2,24 @@ import { TAGS } from './tags';
 
 export const PROJECTS = [
   {
-    name: 'Asistente de Textos con IA',
-    description: 'Permite generar textos con inteligencia artificial a partir de un texto de entrada, utilizando la API de OpenAI. Se pueden seleccionar la categoría y opción a partir de la cual se modificará el texto.',
-    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.OPENAI],
-    image: '/projects/text-helper-ai.webp',
-    href: 'https://github.com/andycvv/text-helper-ai',
-    preview: 'https://text-helper-ai.vercel.app/'
+    name: 'Sistema de Ventas Electroshop',
+    description: 'Sistema de Ventas que automatiza el proceso de venta de Electroshop. Permite gestionar usuarios, productos y pedidos. Los administradores pueden gestionar entidades y actualizar el estado de pedidos, mientras que los clientes pueden crear y consultar sus pedidos.',
+    tags: [TAGS.SPRINGBOOT, TAGS.JAVA, TAGS.ECLIPSE, TAGS.MYSQL],
+    image: '/projects/electroshop.webp'
   },
-  { 
+  {
     name: 'Sistema de Matrículas Escolares',
     description: 'Permite registrar, editar y buscar usuarios, cursos y categorías, además de gestionar matrículas y generar reportes. Los usuarios pueden crear cuentas y acceder con su DNI.',
     tags: [TAGS.JAVA, TAGS.MYSQL, TAGS.JAVASCRIPT],
     image: '/projects/matriculas.jpg',
     href: 'https://github.com/andycvv/sistema-gestion-colegio'
+  },
+  {
+    name: 'Asistente de Textos con IA',
+    description: 'Permite generar textos con inteligencia artificial a partir de un texto de entrada, utilizando la API de OpenAI. Se pueden seleccionar la categoría y opción a partir de la cual se modificará el texto.',
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.OPENAI],
+    image: '/projects/text-helper-ai.webp',
+    href: 'https://github.com/andycvv/text-helper-ai'
   },
   {
     name: 'To-Do App',
@@ -24,14 +29,6 @@ export const PROJECTS = [
     href: 'https://github.com/andycvv/to-do-app',
     preview: 'https://andycvv-to-do-app.netlify.app/'
   },
-  {
-    name: 'La Lucha Sanguchería Criolla',
-    description: 'Página web para una empresa de sándwiches, con secciones de Inicio, Tienda y Nosotros. Permite explorar la historia de la empresa, navegar por el menú y agregar productos al carrito de compras.',
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
-    image: '/projects/lalucha.jpg',
-    href: 'https://github.com/andycvv/ProyectoLaLucha',
-    preview: 'https://andycvv.github.io/ProyectoLaLucha/'
-  }
 ]
 
 export const OTHER_PROJECTS = [

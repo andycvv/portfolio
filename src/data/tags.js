@@ -40,7 +40,7 @@ export const TAGS = {
   },
   MYSQL: {
     name: 'MySQL',
-    class: 'bg-blue-500 text-white',
+    class: 'bg-cyan-600 text-white',
     icon: MySQLIcon
   },
   REACT: {
@@ -74,13 +74,13 @@ export const TAGS = {
     icon: SQLServerIcon
   },
   SPRINGBOOT: {
-    name: 'Spring Boot',
-    class: 'bg-blue-500 text-white',
+    name: 'Spring',
+    class: 'bg-green-900 text-white',
     icon: SpringBootIcon
   },
   ECLIPSE: {
     name: 'Eclipse',
-    class: 'bg-blue-500 text-white',
+    class: 'bg-orange-700 text-white',
     icon: EclipseIcon
   },
   VS: {
